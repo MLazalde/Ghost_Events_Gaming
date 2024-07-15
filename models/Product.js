@@ -8,16 +8,17 @@ Product.init(
   {
     id: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
     description: {
       type: DataTypes.TEXT,
-      allowNull: false,
+      allowNull: true,
     },
     product_name: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     productImage_Url: {
       type: DataTypes.STRING,
