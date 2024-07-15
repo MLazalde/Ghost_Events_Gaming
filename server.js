@@ -45,3 +45,5 @@ sequelize.sync({ force: false }).then(() => {
     )
   );
 });
+
+// server created
