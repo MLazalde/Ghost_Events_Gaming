@@ -1,3 +1,4 @@
+
 const { Model, DataTypes } = require("sequelize");
 
 const sequelize = require("../config/connection");
@@ -32,3 +33,4 @@ Card.init(
 );
 
 module.exports = Card;
+

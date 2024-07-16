@@ -5,6 +5,7 @@ const Card = require("./Card");
 
 //Sequelization associations
 
+
 Product.hasMany(Set);
 
 Set.belongsTo(Product);
