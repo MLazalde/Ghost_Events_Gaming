@@ -70,4 +70,6 @@ router.post("/logout", (req, res) => {
   }
 });
 
+
+//add user's inventory /:userid/cards
 module.exports = router;
