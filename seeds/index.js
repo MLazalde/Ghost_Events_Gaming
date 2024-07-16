@@ -8,6 +8,7 @@ const seedAll = async () => {
   seedSet("string1", "string2");
   seedProduct(MagicData);
   await process.exit(0);
+};
 
 const seedYugioh = require("./yugiohData");
 const seedMagic = require("./magicData");
@@ -15,22 +16,21 @@ const seedOnePiece = require("./onePieceData");
 const seedPokemon = require("./pokemonData");
 const seedMiscellaneous = require("./miscellaneousData");
 
-const seedAll = async () => {
-  await sequelize.sync({ force: true });
+// const seedAll = async () => {
+//   await sequelize.sync({ force: true });
 
-  await seedYugioh();
+//   await seedYugioh();
 
-  await seedMagic();
+//   await seedMagic();
 
-  await seedOnePiece();
+//   await seedOnePiece();
 
-  await seedPokemon();
+//   await seedPokemon();
 
-  await seedMiscellaneous();
+//   await seedMiscellaneous();
 
-  process.exit(0);
-
-};
+//   process.exit(0);
+// };
 seedAll();
 
 const seedProduct = async (productData) => {
