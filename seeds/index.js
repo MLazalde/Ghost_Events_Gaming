@@ -1,4 +1,14 @@
 const sequelize = require("../config/connection");
+
+const { Card, Product, Set } = require("../models/");
+const { MagicData } = require("../seeds/magicTG");
+
+const seedAll = async () => {
+  await sequelize.sync({ force: true });
+  seedSet("string1", "string2");
+  seedProduct(MagicData);
+  await process.exit(0);
+
 const seedYugioh = require("./yugiohData");
 const seedMagic = require("./magicData");
 const seedOnePiece = require("./onePieceData");
@@ -19,6 +29,7 @@ const seedAll = async () => {
   await seedMiscellaneous();
 
   process.exit(0);
+
 };
 seedAll();
 
