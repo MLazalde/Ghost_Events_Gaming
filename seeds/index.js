@@ -6,9 +6,9 @@ const { MagicData } = require("./magicData");
 const seedAll = async () => {
   await sequelize.sync({ force: true });
   await seedProduct(MagicData);
-
   await process.exit(0);
 };
+
 const seedYugioh = require("./yugiohData");
 const seedMagic = require("./magicData");
 const seedOnePiece = require("./onePieceData");
