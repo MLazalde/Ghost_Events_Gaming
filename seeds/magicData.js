@@ -1,43 +1,26 @@
 const { Product, Set, Card } = require("../models");
+
 const MagicData = {
-  name: "magicTG",
+  name: "magic-the-gathering",
   productImage_Url: "TBD",
-  description: "Description ex",
+  description:
+    "a strategic, collectible card game where players take turns battling each other by casting spells, summoning creatures, and using artifacts from their decks",
   sets: [
     {
-      set_name: "The Infinte Forbidden",
-      num_of_cards: 101,
+      set_name: "Assassin's Creed",
+      num_of_cards: 138,
       description:
-        "Return to where it all began with a new strategy featuring the unstoppable Exodia!",
+        " The only way to uncover the secrets of the past is to follow in the footsteps of the assassins who came before, and if you’ve learned anything, it’s that you must be swift, precise, and never show your hand.",
       setImage_Url: "TBD",
-        cards: [
+      cards: [
         {
-          card_name: "Dragon of Pride and Sould",
-          description: "Level 8 dark, dragon monster for the main deck",
+          card_name: "Battlefield Improvisation",
+          description: "One mana, instant white card.",
           cardImage_Url: "TBD",
         },
         {
-          card_name: "Fiendsmith Engraver",
-          description: "Level 6 light, fiend moster for the main deck",
-          cardImage_Url: "TBD",
-        },
-      ],
-    },
-    {
-      set_name: "Battles of Legend: Terminal's Revenge",
-      num_of_cards: 118,
-      description:
-        "Get awesome foil upgrades as well as sought-after tournament cards in Battles of Legend: Terminal Revenge.",
-      setImage_Url: "TBD",
-        cards: [
-        {
-          card_name: "Shining Star Dragon",
-          description: "Level 4 light, dragon monster for the main deck",
-          cardImage_Url: "TBD",
-        },
-        {
-          card_name: "Infernoid Flood",
-          description: "Link 3 fire, fiend monster for the extra deck",
+          card_name: "Assassin Den",
+          description: "Three mana, creature blue card.",
           cardImage_Url: "TBD",
         },
       ],
@@ -45,4 +28,4 @@ const MagicData = {
   ],
 };
 
-module.exports = { MagicData };
+module.exports = MagicData;
