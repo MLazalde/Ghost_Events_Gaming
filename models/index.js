@@ -5,20 +5,15 @@ const Card = require("./Card");
 
 //Sequelization associations
 
-Product.hasMany(Set, {
-  foreignKey: "product_id",
-});
 
-Set.hasMany(Card, {
-  foreignKey: "set_id",
-});
+Product.hasMany(Set);
 
-Card.belongsTo(Set, {
-  foreignKey: "set_id",
-});
+Set.belongsTo(Product);
 
-Card.belongsTo(Product, {
-  foreignKey: "product_id",
-});
+Set.hasMany(Card);
+
+Card.belongsTo(Set);
+
+//user and card should be many to many
 
 module.exports = { User, Product, Set, Card };
