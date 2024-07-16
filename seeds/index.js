@@ -7,7 +7,7 @@ const seedAll = async () => {
   await sequelize.sync({ force: true });
   seedSet("string1", "string2");
   seedProduct(MagicData);
-  await process.exit(0);
+  process.exit(0);
 };
 
 const seedYugioh = require("./yugiohData");
