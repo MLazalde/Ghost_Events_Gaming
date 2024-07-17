@@ -4,7 +4,7 @@ const { Product, Set, Card } = require("../models");
 //Get all product for the homepage
 router.get("/", async (req, res) => {
   try {
-    const productData = await Product.findall({
+    const productData = await Product.findAll({
       include: [
         {
           model: Set,
