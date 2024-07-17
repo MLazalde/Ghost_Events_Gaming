@@ -104,7 +104,7 @@ const pokemonData = {
     {
       set_name: "Charizard ex Premium Collection",
       num_of_cards: 60,
-      decription:
+      description:
         "Charizard ex burns up the opposition’s lead with the cunning firepower of a Darkness-type Pokémon!",
       setImg_Url: "TBD",
       cards: [
@@ -202,3 +202,5 @@ const pokemonData = {
     },
   ],
 };
+
+module.exports = pokemonData;

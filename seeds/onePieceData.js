@@ -27,7 +27,7 @@ const onePieceData = {
         },
         {
           card_name: "Tony Tony-Chopper",
-          descripion:
+          description:
             "a green, 2 energy card with 200 power. It has counter +2000.",
           cardImage_Url: "TBD",
         },

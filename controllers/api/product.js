@@ -50,6 +50,33 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+//http://localhost:3001/api/set
+router.get("/", async (req, res) => {
+    try {
+      //product has many sets
+      const dbProductData = await Product.findAll({
+        include: [
+          {
+            model: Set,
+            attributes: [set_name, description],
+          },
+        ],
+      });
+  
+      const product = dbProductData.map((product) =>
+        product.get({ plain: true })
+      );
+  
+      res.render("homepage", {
+        products,
+        loggedIn: req.session.loggedIn,
+      });
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  });
+
 //GET once set
 //http://localhost:3001/api/product/set/:id
 router.get("/set/:id", async (req, res) => {

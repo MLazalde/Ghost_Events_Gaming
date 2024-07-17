@@ -2,18 +2,21 @@ const sequelize = require("../config/connection");
 
 const { Card, Product, Set } = require("../models/");
 // const { magicData } = require("./magicData");
-
-const seedAll = async () => {
-  await sequelize.sync({ force: true });
-  await seedProduct(MagicData);
-  await process.exit(0);
-};
-
 const seedYugioh = require("./yugiohData");
 const seedMagic = require("./magicData");
 const seedOnePiece = require("./onePieceData");
 const seedPokemon = require("./pokemonData");
 const seedMiscellaneous = require("./miscellaneousData");
+
+const seedAll = async () => {
+  await sequelize.sync({ force: true });
+  await seedProduct(seedMagic);
+  await seedProduct(seedYugioh);
+  await seedProduct(seedOnePiece);
+  await seedProduct(seedPokemon);
+  await seedProduct(seedMiscellaneous);
+  await process.exit(0);
+};
 
 seedAll();
 
