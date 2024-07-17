@@ -1,0 +1,96 @@
+<!-- Header Section -->
+<header
+  class="d-flex justify-content-between align-items-center p-3 bg-dark text-white"
+>
+  <!-- Logo -->
+  <div class="logo">
+    <img
+      src="img/logo.png"
+      alt="ghost gaming logo"
+      style="height: 10rem; width: 10rem"
+    />
+  </div>
+  <!-- Navigation Links -->
+  <nav>
+    <a href="index.html" class="text-white">Ghost Events & Gaming</a>
+    <a href="login.html" class="text-white ml-3">Log In</a>
+    <a href="cart.html" class="text-white ml-3">Cart(0)</a>
+  </nav>
+</header>
+
+<!-- Cart Content Section -->
+<div class="container my-5">
+  <h2 class="mb-4">Your Cart</h2>
+  <!-- Cart Items Table -->
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">Product</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Price</th>
+          <th scope="col">Total</th>
+          <th scope="col">Remove</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Product 1</td>
+          <td>
+            <input type="number" class="form-control" value="1" min="1" />
+          </td>
+          <td>$10.00</td>
+          <td>$10.00</td>
+          <td>
+            <button class="btn btn-danger">Remove</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Product 2</td>
+          <td>
+            <input type="number" class="form-control" value="2" min="1" />
+          </td>
+          <td>$15.00</td>
+          <td>$30.00</td>
+          <td>
+            <button class="btn btn-danger">Remove</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- Cart Total -->
+  <div class="d-flex justify-content-end">
+    <h4>Total: $40.00</h4>
+  </div>
+  <!-- Checkout Button -->
+  <div class="d-flex justify-content-end mt-3">
+    <button class="btn btn-success">Proceed to Checkout</button>
+  </div>
+</div>
+
+<!-- Footer Section -->
+<footer
+  class="d-flex justify-content-between align-items-center p-3 bg-dark text-white"
+>
+  <a
+    href="https://www.google.com/maps/dir//ghost+gaming+and+events/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x876c7d607359343f:0x3876c92515834aa7?sa=X&ved=1t:3061&ictx=111"
+  >Ghost Events and Gaming, 2120 S Holly St #9, Denver, CO 80222</a>
+  <a
+    href="“mailto:Ghosteventsandgaming@gmail.com”"
+  >Ghosteventsandgaming@gmail.com</a>
+  <div>(720) 955-1957</div>
+  <div>
+    <button
+      data-bs-html="true"
+      type="button"
+      class="btn btn-lg"
+      data-bs-toggle="popover"
+      data-bs-content="<ul><li>Monday 1-7PM </li> <li>Tuesday 1-7PM </li><li>Wednesday 1-8PM </li><li>Thursday 1-7PM </li><li>Friday 1-9PM </li><li>Saturday 1-8PM </li><li>Sunday 1-8PM </li></ul>"
+      style="background-color: green"
+    >
+      Click For Hours
+    </button>
+  </div>
+  <div>&lt;Social Media&gt;</div>
+</footer>
