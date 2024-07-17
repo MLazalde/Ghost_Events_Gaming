@@ -50,48 +50,53 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+//GET all sets
 //http://localhost:3001/api/set
 router.get("/", async (req, res) => {
-    try {
-      //product has many sets
-      const dbProductData = await Product.findAll({
-        include: [
-          {
-            model: Set,
-            attributes: [set_name, description],
-          },
-        ],
-      });
-  
-      const product = dbProductData.map((product) =>
-        product.get({ plain: true })
-      );
-  
-      res.render("homepage", {
-        products,
-        loggedIn: req.session.loggedIn,
-      });
-    } catch (err) {
-      console.log(err);
-      res.status(500).json(err);
-    }
-  });
-
-//GET once set
-//http://localhost:3001/api/product/set/:id
-router.get("/set/:id", async (req, res) => {
   try {
-    const dbSetData = await Set.findByPk(req.params.id);
+    //set has many cards
+    const dbSetData = await Set.findAll({
+      include: [
+        {
+          model: Card,
+          attributes: [card_name, cardImage_Url],
+        },
+      ],
+    });
 
-    const set = dbSetData.get({ plain: true });
+    const set = dbSetData.map((set) =>
+      set.get({ plain: true })
+    );
 
-    res.render("set", { set, loggedIn: req.session.loggedIn });
+    res.render("homepage", {
+      products,
+      loggedIn: req.session.loggedIn,
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
 
-
+//GET one set
+//http://localhost:3001/api/product/set/:id
+router.get("/set/:id", async (req, res) => {
+    try {
+        const dbSetData = await Set.findByPk(req.params.id, {
+          include: [
+            {
+              model: Card,
+              attributes: ["id", "description", "card_name", "cardImage_Url"],
+            },
+          ],
+        });
+    
+        const set = dbsetData.get({ plain: true });
+        res.render("set", { set, loggedIn: req.session.loggedIn });
+      } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+      }
+    });
 
 module.exports = router;
