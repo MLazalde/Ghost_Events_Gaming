@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
-const magicRoutes = require('./magic-routes');
-
-router.use('/magic', magicRoutes);
+const productRoutes = require('./product');
+//http://localhost:3001/api/product
+router.use('/product', productRoutes);
 
 module.exports = router;
