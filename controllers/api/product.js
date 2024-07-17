@@ -19,7 +19,7 @@ router.get("/", async (req, res) => {
       product.get({ plain: true })
     );
 
-    res.render("homepage", {
+    return res.render("homepage", {
       products,
       loggedIn: req.session.loggedIn,
     });
