@@ -50,7 +50,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-//http://localhost:3001/api/product
+//http://localhost:3001/api/set
 router.get("/", async (req, res) => {
     try {
       //product has many sets
