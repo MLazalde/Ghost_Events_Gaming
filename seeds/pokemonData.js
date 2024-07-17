@@ -109,78 +109,93 @@ const pokemonData = {
       setImg_Url: "TBD",
       cards: [
         {
-          card_name: "",
-          description: "",
+          card_name: "Charizard EX",
+          description:
+            "A full art, stage 2 pokemon with a two energy retreat cost(Dark-type).",
           cardImage_Url: "TBD",
         },
         {
-          card_name: "",
-          description: "",
+          card_name: "Tyranitar EX",
+          description:
+            "A full art, stage 2 pokemon with a four energy retreat cost(Electric-type).",
           cardImage_Url: "TBD",
         },
         {
-          card_name: "",
-          description: "",
+          card_name: "Scyther",
+          description:
+            "A basic, grass-type pokemon with a one energy retreat cost.",
           cardImage_Url: "TBD",
         },
         {
-          card_name: "",
-          description: "",
+          card_name: "Decidueye EX",
+          description:
+            "A stage 2, grass-type pokemon with a two energy retreat cost.",
           cardImage_Url: "TBD",
         },
         {
-          card_name: "",
-          description: "",
+          card_name: "Entei",
+          description:
+            "A basic, fire-type pokemon with a two energy retreat cost.",
           cardImage_Url: "TBD",
         },
         {
-          card_name: "",
-          description: "",
+          card_name: "Victini EX",
+          description:
+            "A basic, fire-type pokemon with a one energy retreat cost.",
           cardImage_Url: "TBD",
         },
         {
-          card_name: "",
-          description: "",
+          card_name: "Lapras",
+          description:
+            "A bsic, water-type pokemon with a one energy retreat cost.",
           cardImage_Url: "TBD",
         },
         {
-          card_name: "",
-          description: "",
+          card_name: "Wiglett",
+          description:
+            "A basic, water-type pokemon with a one energy retreat cost.",
           cardImage_Url: "TBD",
         },
         {
-          card_name: "",
-          description: "",
+          card_name: "Magneton",
+          description:
+            "A stage 1, electric-type pokemon with a two energy retreat cost.",
           cardImage_Url: "TBD",
         },
         {
-          card_name: "",
-          description: "",
+          card_name: "Pawmot EX",
+          description:
+            "A stage 2, electric-type pokemon with a zero energy retreat cost.",
           cardImage_Url: "TBD",
         },
         {
-          card_name: "",
-          description: "",
+          card_name: "Spoink",
+          description:
+            "A basic, psychic-type pokemon with a one energy retreat cost.",
           cardImage_Url: "TBD",
         },
         {
-          card_name: "",
-          description: "",
+          card_name: "Vespiquen EX",
+          description:
+            "A stage 1, psychic-type pokemon with a two energy cost.",
           cardImage_Url: "TBD",
         },
         {
-          card_name: "",
-          description: "",
+          card_name: "Dragonite EX",
+          description:
+            "A stage 2, dragon-type pokemon with a rwo energy retreat cost.",
           cardImage_Url: "TBD",
         },
         {
-          card_name: "",
-          description: "",
+          card_name: "Melmetal EX",
+          description:
+            "A stage 1, steel-type pokemon with a four energy retreat cost.",
           cardImage_Url: "TBD",
         },
         {
-          card_name: "",
-          description: "",
+          card_name: "Absol EX",
+          description:
+            "A basic, dark-type pokemon with a one energy retreat cost.",
           cardImage_Url: "TBD",
         },
       ],
