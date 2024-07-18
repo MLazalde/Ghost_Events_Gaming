@@ -1,7 +1,8 @@
 const router = require("express").Router();
 const { User } = require("../../models");
 
-// CREATE new user
+// CREATE new user (done)
+//http://localhost:3001/api/
 router.post("/", async (req, res) => {
   try {
     const userData = await User.create({
@@ -12,7 +13,7 @@ router.post("/", async (req, res) => {
 
     req.session.save(() => {
       req.session.loggedIn = true;
-
+      req.session.id = userData.id;
       res.status(200).json(userData);
     });
   } catch (err) {
@@ -21,7 +22,8 @@ router.post("/", async (req, res) => {
   }
 });
 
-// Login
+// Login (done)
+//http://localhost:3001/login
 router.post("/login", async (req, res) => {
   try {
     const userData = await User.findOne({
@@ -36,8 +38,7 @@ router.post("/login", async (req, res) => {
         .json({ message: "Incorrect email or password. Please try again!" });
       return;
     }
-
-    const validPassword = await dbUserData.checkPassword(req.body.password);
+    const validPassword = await userData.checkPassword(req.body.password);
 
     if (!validPassword) {
       res
@@ -48,6 +49,7 @@ router.post("/login", async (req, res) => {
 
     req.session.save(() => {
       req.session.loggedIn = true;
+      req.session.id = userData.id;
 
       res
         .status(200)
@@ -58,8 +60,9 @@ router.post("/login", async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-// Logout
+ 
+// Logout (done)
+//http://localhost:3001/logout
 router.post("/logout", (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
@@ -70,6 +73,6 @@ router.post("/logout", (req, res) => {
   }
 });
 
+// add and destroy cart ()
 
-//add user's inventory /:userid/cards
 module.exports = router;
