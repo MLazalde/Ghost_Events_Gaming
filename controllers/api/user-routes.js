@@ -1,5 +1,6 @@
 const router = require("express").Router();
-const { User } = require("../../models");
+const { User, Card } = require("../../models");
+
 
 // CREATE new user (done)
 //http://localhost:3001/api/
@@ -23,7 +24,7 @@ router.post("/", async (req, res) => {
 });
 
 // Login (done)
-//http://localhost:3001/login
+//http://localhost:3001/api/login
 router.post("/login", async (req, res) => {
   try {
     const userData = await User.findOne({
@@ -62,7 +63,7 @@ router.post("/login", async (req, res) => {
 });
  
 // Logout (done)
-//http://localhost:3001/logout
+//http://localhost:3001/api/logout
 router.post("/logout", (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
@@ -73,6 +74,9 @@ router.post("/logout", (req, res) => {
   }
 });
 
-// add and destroy cart ()
+// add to cart ()
+//({include: cart})
+
+// delete card from cart ()
 
 module.exports = router;
