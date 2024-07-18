@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Product, Set, Card } = require("../models");
+const { Product, Set, Card, User } = require("../models");
 
 // Get user profile (Dashboard) (done)
 //http://localhost:3001/profile
@@ -94,8 +94,22 @@ router.get("/signup", (req, res) => {
   res.render("create");
 });
 
-
 //http://localhost:3001/cart (get)
-
+router.get("/cart", async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.session.user_id, {
+      include: [Card],
+    });
+    const user = userData.get({ plain: true });
+    res.render("cart", {
+      user,
+      // email:
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;

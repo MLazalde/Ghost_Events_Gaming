@@ -3,7 +3,7 @@ const { User, Card } = require("../../models");
 
 
 // CREATE new user (done)
-//http://localhost:3001/api/
+//http://localhost:3001/api/user
 router.post("/", async (req, res) => {
   try {
     const userData = await User.create({
@@ -14,7 +14,7 @@ router.post("/", async (req, res) => {
 
     req.session.save(() => {
       req.session.loggedIn = true;
-      req.session.id = userData.id;
+      req.session.user_id = userData.id;
       res.status(200).json(userData);
     });
   } catch (err) {
@@ -24,7 +24,7 @@ router.post("/", async (req, res) => {
 });
 
 // Login (done)
-//http://localhost:3001/api/login
+//http://localhost:3001/api/user/login
 router.post("/login", async (req, res) => {
   try {
     const userData = await User.findOne({
@@ -63,7 +63,7 @@ router.post("/login", async (req, res) => {
 });
  
 // Logout (done)
-//http://localhost:3001/api/logout
+//http://localhost:3001/api/user/logout
 router.post("/logout", (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
