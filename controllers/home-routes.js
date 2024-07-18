@@ -103,11 +103,12 @@ router.get("/cart", async (req, res) => {
     const user = userData.get({ plain: true });
     const cart = user.cards.map((card) => card.card_name);
     console.log(cart);
-    res.render("cart", {
-      email: user.email,
-      cart: cart,
-      loggedIn: req.session.loggedIn,
-    });
+    // res.render("cart", {
+    //   email: user.email,
+    //   cart: cart,
+    //   loggedIn: req.session.loggedIn,
+    // });
+    res.render("cart");
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
