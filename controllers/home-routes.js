@@ -1,7 +1,24 @@
 const router = require("express").Router();
 const { Product, Set, Card } = require("../models");
 
-//Get all product for the homepage
+// Get user profile (Dashboard) (done)
+//http://localhost:3001/profile
+router.get("/profile", async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.session.id);
+    if (!userData) {
+      res.redirect("/login");
+      return;
+    }
+    const user = userData.get({ plain: true });
+    res.render("profile", { user, loggedIn: true });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+//Get all product for the homepage (Done)
+//http://localhost:3001/
 router.get("/", async (req, res) => {
   try {
     const productData = await Product.findAll({
@@ -24,7 +41,8 @@ router.get("/", async (req, res) => {
   }
 });
 
-//Get one type of product (Pokemon, Yugioh, MtG, OnePiece, Miscellaneous)
+//Get one type of product (Pokemon, Yugioh, MtG, OnePiece, Miscellaneous) (done)
+//http://localhost:3001/product/:id
 router.get("/product/:id", async (req, res) => {
   //if the user isn't logged in, redirect them to the login page
   if (!req.session.loggedIn) {
@@ -32,18 +50,7 @@ router.get("/product/:id", async (req, res) => {
   } else {
     //if the user is logged in, allow them to view the product
     try {
-      const productData = await Product.findbyPk(req.params.id, {
-        include: [
-          {
-            model: Set,
-            attributes: [], //list attributes
-          },
-          {
-            model: Card,
-            attributes: [], //list attributes
-          },
-        ],
-      });
+      const productData = await Product.findbyPk(req.params.id);
       const product = productData.get({ plain: true });
       res.render("product", { product, loggedIn: req.session.loggedIn });
     } catch (err) {
@@ -53,46 +60,21 @@ router.get("/product/:id", async (req, res) => {
   }
 });
 
-//Get one type of set (last two sets with Yugioh, Pokemon. last two items with MtG, OnePiece, Misc.)
+//Get one type of set (last two sets with Yugioh, Pokemon. last two items with MtG, OnePiece, Misc.) (done)
+//http://localhost:3001/set/:id
 router.get("/set/:id", async (req, res) => {
   //if the user is not logged in, redirect them to the login page
-  if (!req.session.loggedIn) {
-    res.redirect("/login");
-  } else {
-    //if user is logged in, allow them to view/buy the set
-    try {
-      const setData = await Set.findbyPk(req.params.id);
-
-      const set = setData.get({ plain: true });
-
-      res.render("set", { set, loggedIn: req.session.loggedIn });
-    } catch (err) {
-      console.log(err);
-      res.status(500).json(err);
-    }
+  try {
+    const setData = await Set.findbyPk(req.params.id);
+    const set = setData.get({ plain: true });
+    res.render("set", { set, loggedIn: req.session.loggedIn });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
   }
 });
 
-//get one specific card from the set/items
-router.get("/card/:id", async (req, res) => {
-  //if the user is not logged in, redirect them to the login page
-  if (!req.session.loggedIn) {
-    res.redirect("/login");
-  } else {
-    //if user is logged in, allow them to view/buy the set
-    try {
-      const cardData = await Card.findbyPk(req.params.id);
-
-      const card = cardData.get({ plain: true });
-
-      res.render("card", { card, loggedIn: req.session.loggedIn });
-    } catch (err) {
-      console.log(err);
-      res.status(500).json(err);
-    }
-  }
-});
-
+//http://localhost:3001/login (done)
 router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
     res.redirect("/");
@@ -101,5 +83,19 @@ router.get("/login", (req, res) => {
 
   res.render("login");
 });
+
+//http://localhost:3001/login (done)
+router.get("/signup", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
+
+  res.render("create");
+});
+
+
+//http://localhost:3001/cart (get)
+
 
 module.exports = router;
