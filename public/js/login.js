@@ -1,3 +1,4 @@
+//LOGIN FORM
 const loginFormHandler = async (event) => {
   event.preventDefault();
 
@@ -19,7 +20,8 @@ const loginFormHandler = async (event) => {
   }
 };
 
-//need a register/sign-up
+//SIGNUP FORM
+//need to connect to handlebars
 const signupFormHandler = async (event) => {
   event.preventDefault();
 
@@ -46,7 +48,7 @@ document
   .querySelector(".form-label")
   .addEventListener("submit", loginFormHandler);
 
-//need to create a register/sign-up
+//need to connect to handlebars
 document
   .querySelector(".signup-form")
   .addEventListener("submit", signupFormHandler);
