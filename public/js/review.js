@@ -1,5 +1,7 @@
 const checkoutButton = document.querySelector("#checkout-button");
 
+const totalEl = document.querySelector(".total-price");
+
 const popoverTriggerList = document.querySelectorAll(
   '[data-bs-toggle="popover"]'
 );
@@ -13,6 +15,10 @@ const cardArr = [...document.querySelectorAll(".product-card")].map((item) => {
     itemName: item.innerHTML,
   };
 });
+
+const totalCost = cardArr.length;
+
+totalEl.innerHTML = `Total: $${totalCost * 10}.00`;
 
 console.log(cardArr);
 

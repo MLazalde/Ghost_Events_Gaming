@@ -14,28 +14,20 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td class="product-card">Product 1</td>
-          <td>
-            <input type="number" class="form-control" value="1" min="1" />
-          </td>
-          <td>$10.00</td>
-          <td>$10.00</td>
-          <td>
-            <button class="btn btn-danger">Remove</button>
-          </td>
-        </tr>
-        <tr>
-          <td class="product-card">Product 2</td>
-          <td>
-            <input type="number" class="form-control" value="2" min="1" />
-          </td>
-          <td class="card-price">$15.00</td>
-          <td class="card-price">$30.00</td>
-          <td>
-            <button class="btn btn-danger">Remove</button>
-          </td>
-        </tr>
+
+        {{#each cart as |card|}}
+          <tr>
+            <td class="product-card">{{card}}</td>
+            <td>
+              <input type="number" class="form-control" value="1" min="1" />
+            </td>
+            <td>$10.00</td>
+            <td>$10.00</td>
+            <td>
+              <button class="btn btn-danger">Remove</button>
+            </td>
+          </tr>
+        {{/each}}
       </tbody>
     </table>
   </div>
@@ -47,11 +39,10 @@
   <div class="d-flex justify-content-end mt-3">
     <button
       id="checkout-button"
-      data-user-email="samueletling@gmail.com"
+      data-user-email={{email}}
       class="btn btn-success"
     >
-      Proceed to Checkout
+      Email Me My Inventory
     </button>
-    <!-- add {{email}} to data-user-email -->
   </div>
 </div>
