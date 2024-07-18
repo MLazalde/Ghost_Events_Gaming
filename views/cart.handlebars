@@ -15,7 +15,7 @@
       </thead>
       <tbody>
         <tr>
-          <td>Product 1</td>
+          <td class="product-card">Product 1</td>
           <td>
             <input type="number" class="form-control" value="1" min="1" />
           </td>
@@ -26,12 +26,12 @@
           </td>
         </tr>
         <tr>
-          <td>Product 2</td>
+          <td class="product-card">Product 2</td>
           <td>
             <input type="number" class="form-control" value="2" min="1" />
           </td>
-          <td>$15.00</td>
-          <td>$30.00</td>
+          <td class="card-price">$15.00</td>
+          <td class="card-price">$30.00</td>
           <td>
             <button class="btn btn-danger">Remove</button>
           </td>
@@ -41,10 +41,17 @@
   </div>
   <!-- Cart Total -->
   <div class="d-flex justify-content-end">
-    <h4>Total: $40.00</h4>
+    <h4 class="total-price">Total: $40.00</h4>
   </div>
   <!-- Checkout Button -->
   <div class="d-flex justify-content-end mt-3">
-    <button class="btn btn-success">Proceed to Checkout</button>
+    <button
+      id="checkout-button"
+      data-user-email="samueletling@gmail.com"
+      class="btn btn-success"
+    >
+      Proceed to Checkout
+    </button>
+    <!-- add {{email}} to data-user-email -->
   </div>
 </div>
