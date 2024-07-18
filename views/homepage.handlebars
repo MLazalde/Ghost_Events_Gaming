@@ -1,187 +1,152 @@
-
-    <!-- Header Section -->
-    <header
-      class="d-flex justify-content-between align-items-center p-3 bg-dark text-white"
-    >
-      <!-- Logo -->
-      <div class="logo">
-        <img
-          src="img/logo.png"
-          alt="ghost gaming logo"
-          style="height: 10rem; width: 10rem"
-        />
-      </div>
-      <!-- Navigation Links -->
-      <nav>
-        <a href="#" class="text-white">Ghost Events & Gaming</a>
-        <a href="#" class="text-white ml-3">Log In</a>
-        <a href="#" class="text-white ml-3">Cart(0)</a>
-      </nav>
-    </header>
-
-    <!-- Top Navigation Bar -->
-    <div
-      class="navigation d-flex justify-content-around align-items-center text-white py-2"
-    >
-      <a href="#">
-        <img
-          src="img/mtgbanner.jpeg"
-          alt="magic the gathering"
-          style="height: 4rem; width: 8rem"
-        />
-      </a>
-      <a href="#">
-        <img
-          src="img/pokemon.png"
-          alt="magic the gathering"
-          style="height: 4rem; width: 8rem"
-        />
-      </a>
-      <a href="#">
-        <img
-          src="img/yugioh.jpg"
-          alt="magic the gathering"
-          style="height: 6rem; width: 8rem"
-        />
-      </a>
-      <a href="#">
-        <img
-          src="img/onepiece.jpeg"
-          alt="magic the gathering"
-          style="height: 4rem; width: 8rem"
-        />
-      </a>
-      <a href="#">
-        <img
-          src="img/misc.png"
-          alt="magic the gathering"
-          style="height: 4rem; width: 5rem"
-        />
-      </a>
-    </div>
-
-    <!-- Search Bar -->
-    <div class="search-bar d-flex justify-content-center py-3">
-      <input type="text" class="form-control w-50" placeholder="Search..." />
-      <button
-        type="submit"
-        style="
+<!-- Search Bar -->
+<div class="search-bar d-flex justify-content-center py-3">
+  <input type="text" class="form-control w-50" placeholder="Search..." />
+  <button
+    type="submit"
+    style="
           border: none;
           background-color: green;
           border-radius: 7px;
           color: white;
         "
+  >
+    Submit
+  </button>
+</div>
+
+<!-- Main Content Section -->
+<div class="row content">
+  <!-- Left Column: Upcoming Products -->
+  <div class="col-md-3 products">
+    <div class="product mb-4">Upcoming Product 1</div>
+    <div class="product mb-4">Upcoming Product 2</div>
+  </div>
+
+  <!-- Middle Column: Carousels for Current and Hot Products -->
+  <div class="col-md-6">
+    <!-- Carousel for Current / Hot Products -->
+    <div
+      id="carouselExampleIndicators"
+      class="carousel slide"
+      data-bs-ride="carousel"
+    >
+      <!-- Carousel Indicators -->
+      <div class="carousel-indicators" style="margin: 0rem;">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+          style="background-color: green"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+          style="background-color: green"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+          style="background-color: green"
+        ></button>
+      </div>
+      <!-- Carousel Items -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="d-block w-100 product">Current / Hot Product 1</div>
+        </div>
+        <div class="carousel-item">
+          <div class="d-block w-100 product">Current / Hot Product 2</div>
+        </div>
+        <div class="carousel-item">
+          <div class="d-block w-100 product">Current / Hot Product 3</div>
+        </div>
+      </div>
+      <!-- Carousel Controls -->
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev"
+        style="background-color: green"
       >
-        Submit
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next"
+        style="background-color: green"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
       </button>
     </div>
+    <!-- Calendar of Events Section -->
+    <div class="events mt-4">
+      <div class="event">Calendar of Events</div>
+    </div>
+  </div>
 
-    <!-- Main Content Section -->
-    <div class="row content">
-      <!-- Left Column: Upcoming Products -->
-      <div class="col-md-3 products">
-        <div class="product mb-4">Upcoming Product 1</div>
-        <div class="product mb-4">Upcoming Product 2</div>
-      </div>
-
-      <!-- Middle Column: Carousels for Current and Hot Products -->
-      <div class="col-md-6">
-        <!-- Carousel for Current / Hot Products -->
-        <div
-          id="carouselExampleIndicators"
-          class="carousel slide"
-          data-bs-ride="carousel"
-        >
-          <!-- Carousel Indicators -->
-          <div class="carousel-indicators" style="margin: 0rem;">
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide-to="0"
-              class="active"
-              aria-current="true"
-              aria-label="Slide 1"
-              style="background-color: green"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide-to="1"
-              aria-label="Slide 2"
-              style="background-color: green"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide-to="2"
-              aria-label="Slide 3"
-              style="background-color: green"
-            ></button>
-          </div>
-          <!-- Carousel Items -->
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="d-block w-100 product">Current / Hot Product 1</div>
-            </div>
-            <div class="carousel-item">
-              <div class="d-block w-100 product">Current / Hot Product 2</div>
-            </div>
-            <div class="carousel-item">
-              <div class="d-block w-100 product">Current / Hot Product 3</div>
-            </div>
-          </div>
-          <!-- Carousel Controls -->
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="prev"
-            style="background-color: green"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="next"
-            style="background-color: green"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-        <!-- Calendar of Events Section -->
-        <div class="events mt-4">
-          <div class="event">Calendar of Events</div>
-        </div>
-      </div>
-
-      <!-- Right Column: Miscellaneous Products -->
-      <div class="col-md-3 products">
-        <div class="product mb-4">Miscellaneous Product 1</div>
-        <div class="product mb-4">Miscellaneous Product 2</div>
+  <!-- Right Column: Miscellaneous Products -->
+  <div class="col-md-3 products">
+    <div class="product mb-4">Miscellaneous Product 1</div>
+    <div class="product mb-4">Miscellaneous Product 2</div>
+  </div>
+</div>
+{{! card section }}
+<div class="row row-cols-1 row-cols-md-2 g-4">
+  <div class="col">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as
+          a natural lead-in to additional content. This content is a little bit
+          longer.</p>
       </div>
     </div>
-    <!-- Footer Section -->
-    <footer
-      class="d-flex justify-content-between align-items-center p-3 bg-dark text-white"
-    >
-      <a href="https://www.google.com/maps/dir//ghost+gaming+and+events/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x876c7d607359343f:0x3876c92515834aa7?sa=X&ved=1t:3061&ictx=111">Ghost Events and Gaming, 2120 S Holly St #9, Denver, CO 80222</a>
-      <a href=“mailto:Ghosteventsandgaming@gmail.com”>Ghosteventsandgaming@gmail.com</a>
-      <div>(720) 955-1957</div>
-      <div>
-        <button
-          data-bs-html="true"
-          type="button"
-          class="btn btn-lg"
-          data-bs-toggle="popover"
-          data-bs-content="<ul><li>Monday 1-7PM </li> <li>Tuesday 1-7PM </li><li>Wednesday 1-8PM </li><li>Thursday 1-7PM </li><li>Friday 1-9PM </li><li>Saturday 1-8PM </li><li>Sunday 1-8PM </li></ul>"
-          style="background-color: green;"
-        >
-          Click For Hours
-        </button>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as
+          a natural lead-in to additional content. This content is a little bit
+          longer.</p>
       </div>
-      <div>&lt;Social Media&gt;</div>
-    </footer>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as
+          a natural lead-in to additional content.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as
+          a natural lead-in to additional content. This content is a little bit
+          longer.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#each products as |product|}}{{/each}}
