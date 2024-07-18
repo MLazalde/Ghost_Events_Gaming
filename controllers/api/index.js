@@ -1,9 +1,8 @@
 const router = require("express").Router();
 
-const productRoutes = require("./product");
-const productRoutes = require("./product");
+const userRoutes = require("./user-routes");
 
 //http://localhost:3001/api/product
-router.use("/product", productRoutes);
+router.use("/user", userRoutes);
 
 module.exports = router;
