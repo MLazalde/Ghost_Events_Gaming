@@ -101,9 +101,11 @@ router.get("/cart", async (req, res) => {
       include: [Card],
     });
     const user = userData.get({ plain: true });
+    const cart = user.cards.map((card) => card.card_name);
+    console.log(cart);
     res.render("cart", {
-      user,
-      // email:
+      email: user.email,
+      cart: cart,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {

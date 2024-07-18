@@ -76,6 +76,7 @@ router.post("/logout", (req, res) => {
 // add to cart ()
 //({include: cart})
 // Route to add products to the cart
+//http://localhost:3001/api/user/cart/add/:id
 router.put("/cart/add/:id", async (req, res) => {
   try {
     const user = await User.findByPk(req.session.user_id);
@@ -84,13 +85,13 @@ router.put("/cart/add/:id", async (req, res) => {
       return;
     }
 
-    const card = await Card.findByPk(req.body.product_id);
+    const card = await Card.findByPk(req.params.id);
     if (!card) {
       res.status(404).json({ message: "Product not found" });
       return;
     }
 
-    await user.addProduct(card);
+    await user.addCard(card);
     res.status(200).json({ message: "Product added to cart" });
   } catch (err) {
     console.log(err);
@@ -99,7 +100,7 @@ router.put("/cart/add/:id", async (req, res) => {
 });
 
 // delete card from cart ()
-// Route to delete products from the cart
+//http://localhost:3001/api/user/cart/remove/:id
 router.delete("/cart/remove/:id", async (req, res) => {
   try {
     const user = await User.findByPk(req.session.user_id);
@@ -108,7 +109,7 @@ router.delete("/cart/remove/:id", async (req, res) => {
       return;
     }
 
-    const card = await card.findByPk(req.body.product_id);
+    const card = await card.findByPk(req.params.id);
     if (!card) {
       res.status(404).json({ message: "Product not found" });
       return;
