@@ -50,8 +50,11 @@ router.get("/product/:id", async (req, res) => {
   } else {
     //if the user is logged in, allow them to view the product
     try {
-      const productData = await Product.findByPk(req.params.id);
+      const productData = await Product.findByPk(req.params.id, {
+        include: [Set],
+      });
       const product = productData.get({ plain: true });
+      console.log(product);
       res.render("product", { product, loggedIn: req.session.loggedIn });
     } catch (err) {
       console.log(err);
@@ -63,10 +66,17 @@ router.get("/product/:id", async (req, res) => {
 //Get one type of set (last two sets with Yugioh, Pokemon. last two items with MtG, OnePiece, Misc.) (done)
 //http://localhost:3001/set/:id
 router.get("/set/:id", async (req, res) => {
+  console.log(
+    "---------------------------------------------------------------------------"
+  );
+  console.log(req.params.id);
   //if the user is not logged in, redirect them to the login page
   try {
-    const setData = await Set.findByPk(req.params.id);
+    const setData = await Set.findByPk(req.params.id, {
+      include: [Card],
+    });
     const set = setData.get({ plain: true });
+    console.log(set);
     res.render("set", { set, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
@@ -100,16 +110,15 @@ router.get("/cart", async (req, res) => {
     const userData = await User.findByPk(req.session.user_id, {
       include: [Card],
     });
-    console.log(userData);
     const user = userData.get({ plain: true });
     const cart = user.cards.map((card) => card.card_name);
     console.log(cart);
-    // res.render("cart", {
-    //   email: user.email,
-    //   cart: cart,
-    //   loggedIn: req.session.loggedIn,
-    // });
-    res.render("cart");
+    console.log(user);
+    res.render("cart", {
+      email: user.email,
+      cart: cart,
+      loggedIn: req.session.loggedIn,
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
