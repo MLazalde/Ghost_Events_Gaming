@@ -1,6 +1,9 @@
-const checkoutButton = document.querySelector("#checkout-button");
+// const emailjs = require("emailjs");
 
-const totalEl = document.querySelector(".total-price");
+const checkoutButton = document.querySelector("#checkout-button");
+const addToCartBtn = document.getElementById("addToCartBtn");
+
+// const totalEl = document.querySelector(".total-price");
 
 const popoverTriggerList = document.querySelectorAll(
   '[data-bs-toggle="popover"]'
@@ -16,28 +19,46 @@ const cardArr = [...document.querySelectorAll(".product-card")].map((item) => {
   };
 });
 
-const totalCost = cardArr.length;
+// click to add to cart
+addToCartBtn.addEventListener("click", async () => {
+  try {
+    const response = await fetch(
+      `http://localhost:3001/api/user/cart/add/:id`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ req.session.id }), // Replace 'your_product_id_here' with the actual product ID
+      }
+    );
 
-totalEl.innerHTML = `Total: $${totalCost * 10}.00`;
+    if (response.ok) {
+      const data = await response.json();
+      console.log(data.message); 
+    } else {
+      throw new Error("Failed to add product to cart");
+    }
+  } catch (error) {
+    console.error(error);
+  }
+});
+
+//keeps getting an error saying that totalEl can not be null
+document.addEventListener("DOMContentLoaded", function () {
+  const totalEl = document.querySelector(".total-price");
+  const totalCost = cardArr.length > 0 ? cardArr.length : 0;
+  if (totalCost > 0) {
+    totalEl.innerHTML = `Total: $${totalCost * 10}.00`;
+  } else {
+    totalEl.innerHTML = "Total: $0.00";
+  }
+});
 
 console.log(cardArr);
 
 emailjs.init({
   publicKey: "mTWxTuJ1Hp8JygFMN",
-  // Do not allow headless browsers
-  // blockHeadless: true,
-  // blockList: {
-  //   // Block the suspended emails
-  //   list: ["foo@emailjs.com", "bar@emailjs.com"],
-  //   // The variable contains the email address
-  //   watchVariable: "userEmail",
-  // },
-  // limitRate: {
-  //   // Set the limit rate for the application
-  //   id: "app",
-  //   // Allow 1 request per 10s
-  //   throttle: 10000,
-  // },
 });
 
 const sendEmail = () => {

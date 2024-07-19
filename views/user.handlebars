@@ -1,9 +1,15 @@
 <!-- Dashboard Content -->
     <div class="container mt-5">
       <h1>User Dashboard</h1>
-      <!-- User Information -->
+      {{!-- <!-- User Information -->
       <section class="mb-4">
         <h2>Account Information</h2>
         <p>Name: John Doe</p>
         <p>Email: john.doe@example.com</p>
-      </section>
+      </section> --}}
+      
+      {{#if loggedIn}}
+    <button id="logout" class="btn-no-style">Logout</button>
+    {{else}}
+    <a href="/login">Login</a>
+    {{/if}}

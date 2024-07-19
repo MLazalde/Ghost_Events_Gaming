@@ -50,7 +50,7 @@ router.get("/product/:id", async (req, res) => {
   } else {
     //if the user is logged in, allow them to view the product
     try {
-      const productData = await Product.findbyPk(req.params.id);
+      const productData = await Product.findByPk(req.params.id);
       const product = productData.get({ plain: true });
       res.render("product", { product, loggedIn: req.session.loggedIn });
     } catch (err) {
@@ -65,7 +65,7 @@ router.get("/product/:id", async (req, res) => {
 router.get("/set/:id", async (req, res) => {
   //if the user is not logged in, redirect them to the login page
   try {
-    const setData = await Set.findbyPk(req.params.id);
+    const setData = await Set.findByPk(req.params.id);
     const set = setData.get({ plain: true });
     res.render("set", { set, loggedIn: req.session.loggedIn });
   } catch (err) {
@@ -81,10 +81,10 @@ router.get("/login", (req, res) => {
     return;
   }
 
-  res.render("login");
+  res.render("cart");
 });
 
-//http://localhost:3001/login (done)
+//http://localhost:3001/signup (done)
 router.get("/signup", (req, res) => {
   if (req.session.loggedIn) {
     res.redirect("/");
@@ -100,6 +100,7 @@ router.get("/cart", async (req, res) => {
     const userData = await User.findByPk(req.session.user_id, {
       include: [Card],
     });
+    console.log(userData);
     const user = userData.get({ plain: true });
     const cart = user.cards.map((card) => card.card_name);
     console.log(cart);
