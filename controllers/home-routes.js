@@ -81,7 +81,7 @@ router.get("/login", (req, res) => {
     return;
   }
 
-  res.render("cart");
+  res.render("login");
 });
 
 //http://localhost:3001/signup (done)
