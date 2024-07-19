@@ -1,5 +1,4 @@
 const { Product, Set, Card } = require("../models");
-const magicSet = require("../public/img/mtgSet.jpg");
 
 const magicData = {
   name: "magic-the-gathering",
@@ -12,12 +11,12 @@ const magicData = {
       num_of_cards: 138,
       description:
         " The only way to uncover the secrets of the past is to follow in the footsteps of the assassins who came before, and if you’ve learned anything, it’s that you must be swift, precise, and never show your hand.",
-      setImage_Url: "magicSet",
+      setImage_Url: "/img/mtgSet.jpg",
       cards: [
         {
           card_name: "Battlefield Improvisation",
           description: "One mana, instant white card.",
-          cardImage_Url: "../public/img/batImp.jpg",
+          cardImage_Url: "/img/batImp.jpg",
         },
         {
           card_name: "Tax Collector",
