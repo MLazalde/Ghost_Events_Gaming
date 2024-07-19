@@ -3,18 +3,28 @@
   <div class="row">
     <!-- Product Image -->
     <div class="col-md-6">
-      <img src="img/product-image.jpg" alt="Product Image" class="img-fluid" />
+
+      {{#each product.sets as |set|}}
+        <div>
+          <a href="/set/{{set.id}}">
+            <h2>{{set.set_name}}</h2>
+            <img src="https://placehold.co/200" alt="Set image" />
+          </a>
+          <p>{{set.description}}</p>
+        </div>
+        <hr />
+      {{/each}}
+
+      {{! <img src="img/product-image.jpg" alt="Product Image" class="img-fluid" /> }}
     </div>
     <!-- Product Information -->
     <div class="col-md-6">
-      <h1>Product Name</h1>
+      <h1>{{product.product_name}}</h1>
       <p class="text-muted">$150.00</p>
       <p>
-        Product description goes here. This is where you describe the product in
-        detail, including its features, benefits, and any other relevant
-        information.
+        {{product.description}}
       </p>
-      <button id="addToCartBtn" class="btn btn-primary">Add to Cart</button>
+      {{! <button id="addToCartBtn" class="btn btn-primary">Add to Cart</button> }}
     </div>
   </div>
 </div>
