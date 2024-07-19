@@ -84,7 +84,7 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
-//http://localhost:3001/login (done)
+//http://localhost:3001/signup (done)
 router.get("/signup", (req, res) => {
   if (req.session.loggedIn) {
     res.redirect("/");
@@ -100,6 +100,7 @@ router.get("/cart", async (req, res) => {
     const userData = await User.findByPk(req.session.user_id, {
       include: [Card],
     });
+    console.log(userData);
     const user = userData.get({ plain: true });
     const cart = user.cards.map((card) => card.card_name);
     console.log(cart);
