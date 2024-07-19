@@ -11,13 +11,13 @@ const onePieceData = {
       num_of_cards: 51,
       description:
         "A 51-card deck based on Uta's song from the movie ONE PIECE FILM RED",
-      setImage_Url: "TBD",
+      setImage_Url: "../public/img/onePiece.jpg",
       cards: [
         {
           card_name: "Usopp",
           description:
             "A green, 3 energy card with 5000 power. It has counter +1000.",
-          cardImage_Url: "TBD",
+          cardImage_Url: "../public/img/usopp.jpg",
         },
         {
           card_name: "Jinbe",

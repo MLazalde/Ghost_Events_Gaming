@@ -11,12 +11,12 @@ const miscellaneousData = {
       num_of_cards: 204,
       description:
         "The flood has washed precious lore far into the Inklands! Eager to recover what was lost, adventurous Illumineers head into the unknown reaches of the realm.",
-      setImage_Url: "TBD",
+      setImage_Url: "../public/img/lorSet.jpg",
       cards: [
         {
           card_name: "Baloo - von BruinWald XIII",
           description: "A rare amber, 3 power card.",
-          cardImage_Url: "TBD",
+          cardImage_Url: "../public/img/baloo.jpg",
         },
         {
           card_name: "Dalmation Puppy - Tail Wagger",
@@ -95,12 +95,12 @@ const miscellaneousData = {
       num_of_cards: 180,
       description:
         "The My Hero Academia: Girl Power booster set will feature all your favorite female students, heroes, and villains.",
-      setImage_Url: "TBD",
+      setImage_Url: "../public/img/MHA.jpg",
       cards: [
         {
           card_name: "America's #1 Hero",
           description: "A rare, level 3 difficulty foundation card.",
-          cardImage_Url: "TBD",
+          cardImage_Url: "../public/img/hero.jpg",
         },
         {
           card_name: "Ryukyu",

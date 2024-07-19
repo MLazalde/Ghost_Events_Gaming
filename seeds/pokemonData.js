@@ -12,12 +12,12 @@ const pokemonData = {
       num_of_cards: 160,
       description:
         "Welcome to the land of Kitakami, where people and Pokémon live harmoniously with nature.",
-      setImage_Url: "TBD",
+      setImage_Url: "../public/img/pokeSet.jpg",
       cards: [
         {
           card_name: "Luminous Energy",
           description: "A special energy, gold card.",
-          cardImage_Url: "TBD",
+          cardImage_Url: "../public/img/lumNGR.jpg",
         },
         {
           card_name: "Carmine",
@@ -112,13 +112,13 @@ const pokemonData = {
           card_name: "Charizard EX",
           description:
             "A full art, stage 2 pokemon with a two energy retreat cost(Dark-type).",
-          cardImage_Url: "TBD",
+          cardImage_Url: "../public/img/preCol.jpg",
         },
         {
           card_name: "Tyranitar EX",
           description:
             "A full art, stage 2 pokemon with a four energy retreat cost(Electric-type).",
-          cardImage_Url: "TBD",
+          cardImage_Url: "../public/img/tyEx/jpg",
         },
         {
           card_name: "Scyther",
