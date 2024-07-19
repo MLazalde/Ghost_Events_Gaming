@@ -54,7 +54,7 @@ GitHub Repository: [GitHub](https://github.com/MLazalde/Ghost_Events_Gaming.git)
 
 If you have any questions, please email the team at:
 
-Jacob Jenkins <j_jenkins!u.pacific.edu>
+Jacob Jenkins <j_jenkins1@u.pacific.edu>
 
 Mike Lazalde <Mikealazalde@gmail.com>.
 

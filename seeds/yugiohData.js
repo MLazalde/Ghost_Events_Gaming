@@ -11,12 +11,12 @@ const yugiohData = {
       num_of_cards: 101,
       description:
         "Return to where it all began with a new strategy featuring the unstoppable Exodia!",
-      setImage_Url: "TBD",
+      setImage_Url: "../public/img/info.jpg",
       cards: [
         {
           card_name: "Dragon of Pride and Soul",
           description: "Level 8 dark, dragon monster for the main deck",
-          cardImage_Url: "TBD",
+          cardImage_Url: "../public/img/yugiCard.jpg",
         },
         {
           card_name: "Fiendsmith Engraver",
@@ -106,12 +106,12 @@ const yugiohData = {
       num_of_cards: 118,
       description:
         "Get awesome foil upgrades as well as sought-after tournament cards in Battles of Legend: Terminal Revenge.",
-      setImage_Url: "TBD",
+      setImage_Url: "../public/img/bltr.jpg",
       cards: [
         {
           card_name: "Shining Star Dragon",
           description: "Level 4 light, dragon monster for the main deck.",
-          cardImage_Url: "TBD",
+          cardImage_Url: "../public/img/yugiCard2.jpg",
         },
         {
           card_name: "Infernoid Flood",

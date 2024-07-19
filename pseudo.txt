@@ -1,0 +1,16 @@
+Routes for views
+-homepage: displays all the product
+-login page
+-signup page
+-dashboard profile page
+-single product page that displays sets
+-single set page that displays all cards in a set
+-cart page/email.js that sends cart to email
+
+API Routes
+-route for login
+-route to create user
+-get route for users cart [cards]
+-route to add an card to users cart
+-route to remove a card from the users cart
+
