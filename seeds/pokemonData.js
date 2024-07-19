@@ -1,5 +1,4 @@
 const { Product, Set, Card } = require("../models");
-const { productImage_Url } = require("./yugiohData");
 
 const pokemonData = {
   name: "pokemon",
@@ -12,12 +11,12 @@ const pokemonData = {
       num_of_cards: 160,
       description:
         "Welcome to the land of Kitakami, where people and Pokémon live harmoniously with nature.",
-      setImage_Url: "../public/img/pokeSet.jpg",
+      setImage_Url: "/img/pokeSet.jpg",
       cards: [
         {
           card_name: "Luminous Energy",
           description: "A special energy, gold card.",
-          cardImage_Url: "../public/img/lumNGR.jpg",
+          cardImage_Url: "/img/lumNGR.jpg",
         },
         {
           card_name: "Carmine",
@@ -106,19 +105,19 @@ const pokemonData = {
       num_of_cards: 60,
       description:
         "Charizard ex burns up the opposition’s lead with the cunning firepower of a Darkness-type Pokémon!",
-      setImg_Url: "TBD",
+      setImg_Url: "/img/preCol.jpg",
       cards: [
         {
           card_name: "Charizard EX",
           description:
             "A full art, stage 2 pokemon with a two energy retreat cost(Dark-type).",
-          cardImage_Url: "../public/img/preCol.jpg",
+          cardImage_Url: "TBD",
         },
         {
           card_name: "Tyranitar EX",
           description:
             "A full art, stage 2 pokemon with a four energy retreat cost(Electric-type).",
-          cardImage_Url: "../public/img/tyEx/jpg",
+          cardImage_Url: "/img/tyEx/jpg",
         },
         {
           card_name: "Scyther",
