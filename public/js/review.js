@@ -19,30 +19,30 @@ const cardArr = [...document.querySelectorAll(".product-card")].map((item) => {
   };
 });
 
-// click to add to cart
-addToCartBtn.addEventListener("click", async () => {
-  try {
-    const response = await fetch(
-      `http://localhost:3001/api/user/cart/add/:id`,
-      {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ id: "product_id_here" }), // Replace 'product_id_here' with the actual product ID
-      }
-    );
+// // click to add to cart
+// addToCartBtn.addEventListener("click", async () => {
+//   try {
+//     const response = await fetch(
+//       `http://localhost:3001/api/user/cart/add/:id`,
+//       {
+//         method: "PUT",
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//         body: JSON.stringify({ id: "product_id_here" }), // Replace 'product_id_here' with the actual product ID
+//       }
+//     );
 
-    if (response.ok) {
-      const data = await response.json();
-      console.log(data.message);
-    } else {
-      throw new Error("Failed to add product to cart");
-    }
-  } catch (error) {
-    console.error(error);
-  }
-});
+//     if (response.ok) {
+//       const data = await response.json();
+//       console.log(data.message);
+//     } else {
+//       throw new Error("Failed to add product to cart");
+//     }
+//   } catch (error) {
+//     console.error(error);
+//   }
+// });
 
 //keeps getting an error saying that totalEl can not be null
 document.addEventListener("DOMContentLoaded", function () {
