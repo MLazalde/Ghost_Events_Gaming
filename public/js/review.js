@@ -29,13 +29,13 @@ addToCartBtn.addEventListener("click", async () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ req.session.id }), // Replace 'your_product_id_here' with the actual product ID
+        body: JSON.stringify({ id: "product_id_here" }), // Replace 'product_id_here' with the actual product ID
       }
     );
 
     if (response.ok) {
       const data = await response.json();
-      console.log(data.message); 
+      console.log(data.message);
     } else {
       throw new Error("Failed to add product to cart");
     }
